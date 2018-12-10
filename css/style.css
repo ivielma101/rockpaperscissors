@@ -1,9 +1,13 @@
 .row{
   text-align:center;
+  font-weight: bold;
   
 }
 #choices{
   display:flex;
   justify-content:space-between;
   
+}
+h1{
+  text-decoration: underline;
 }
