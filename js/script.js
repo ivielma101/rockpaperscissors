@@ -12,32 +12,50 @@ var winner;
 winner="";
 var randomNumber;
 
-randomNumber=0;
 $("#shoot").click(function(){
     userChoice=$("#input").val();
     $("#userChoice").text(userChoice);
     randomNumber=Math.random();
     if( randomNumber<.3333333333333333333333333){
-        computerChoice="Rock";
+        computerChoice="rock";
     }
     else if( randomNumber<.666666666666666666666667){
-        computerChoice="Scissors";
+        computerChoice="scissors";
     }
     else{
-        computerChoice:"Paper";
+        computerChoice="paper";
     }
 
-});
-    computerChoice=$("#input").val();
-    $("#computerChoice").text(computerChoice)
-var userInput=$("#userChoice").val();
-var computerInput=$("#computerChoice").val();
+$("#computerChoice").text(computerChoice)
 
-var computerWinner= (computerChoice=== computerInput);
-var userWinner
-
-$("button").click(function(){
-$("#userChoice").text($("#input").val());
+if (userChoice ==="rock" && computerChoice ==="rock"){
+    winner= "Its a tie";
+}
+if (userChoice=== "rock" && computerChoice ==="paper"){
+    winner= "User Wins";
+}
+if (userChoice==="rock" && computerChoice === "scissors"){
+    winner= "computer wins";
+}
+if (userChoice==="paper" && computerChoice ==="paper"){
+    winner= "Its a tie";
+}
+if (userChoice==="paper" && computerChoice==="rock"){
+    winner= "User wins";
+}
+if (userChoice==="paper" && computerChoice==="scissors"){
+    winner= "computer wins";
+}
+if (userChoice==="scissors" && computerChoice==="scissors"){
+    winner= "Its a tie";
+}
+if (userChoice==="scissors" && computerChoice==="rock"){
+    winner="computer wins";
+}
+if (userChoice==="scissors" && computerChoice==="paper"){
+    winner=" user wins";
+}
+$("#result").text(winner);
 });
 
 
